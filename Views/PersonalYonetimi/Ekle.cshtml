@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Ekle";
+}
+
+@model Personal
+
+Buraya Personel eklencektir
+<div class="row">
+    <div class="col-6">
+        <form asp-action="Ekle" method="post">
+                <p>
+                    <label for="">Personel No</label>
+                    <input type="number" asp-for="PersonalNo" class="form-control">
+                </p>
+                <p>
+                    <label for="">Ad</label>
+                    <input type="text" asp-for="Ad" class="form-control">
+                </p>
+                <p>
+                    <label for="">Soyad</label>
+                    <input type="text" asp-for="Soyad" class="form-control">
+                </p>
+                <p>
+                    <label for="">Adres</label>
+                    <textarea name="" asp-for="Adres" id="" class="form-control"></textarea>
+                </p>
+                <p>
+                    <label for="">Maaş</label>
+                    <input type="number" asp-for="Maas" step="0.01" class="form-control">
+                </p>
+                <p>
+                    <label for="">Resim</label>
+                    <input type="text" asp-for="Resim" class="form-control">
+                </p>
+                <p>
+                    <input type="submit" value="Kaydet" class="btn btn-primary">
+                </p>
+        </form>
+    </div>
+</div>
+

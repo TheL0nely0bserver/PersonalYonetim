@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Duzenle";
+}
+
+@model Personal
+
+<p><span><h3>@Model.Ad @Model.Soyad</h3></span> Kişisinin Verilerini düzenlemek için Aşağıdaki formu kullanınız</p>
+
+<div class="row">
+    <div class="col-6">
+
+
+<form asp-action="Duzenle" method="post">
+
+    <label for="">Personal No</label>
+    <input type="number" asp-for="PersonalNo" readonly class="form-control">
+    
+    <label for="">Ad</label>
+    <input type="text" asp-for="Ad" class="form-control">
+    
+    <label for="">Soyad</label>
+    <input type="text" asp-for="Soyad" class="form-control">
+    
+    <label for="">Adres</label>
+    <textarea  asp-for="Adres" class="form-control"></textarea>
+    
+     <label for="">Maaş</label>
+    <input type="text" asp-for="Maas" class="form-control">
+
+    <input type="submit" value="Güncelle" class="btn btn-primary">
+    <a asp-controller="PersonalYonetimi" asp-action="Index"><input type="submit" class="btn btn-danger"></a>
+
+
+</form>
+
+
+</div>
+</div>

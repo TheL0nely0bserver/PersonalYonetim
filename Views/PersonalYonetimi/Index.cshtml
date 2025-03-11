@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "PersonalYonetim - Index";
+}
+
+
+ @model List<Personal>;
+
+
+<table>
+
+   
+        <tbody>
+
+
+            @foreach(var item in Model){
+                <tr>
+                    <th scope="row">@item.PersonalNo</th>
+                    <td>@item.Ad</td>
+                    <td>@item.Soyad</td>
+                    <td>@item.Adres</td>
+                    <td>@item.Maas</td>
+                    <td><img src="~/resimler/personel/@item.Resim" height="50px" width="50px" style="padding-bottom: 10px; border-radius: 75px;"></td>
+                    <td>
+                        <a class="btn btn-outline-primary" asp-controller="PersonalYonetimi" asp-action="Detay" asp-route-id="@item.PersonalNo" >Detay</a>
+                        <a class="btn btn-outline-warning" asp-controller="PersonalYonetimi" asp-action="Duzenle" asp-route-id="@item.PersonalNo" role="button">Güncelle</a>
+
+
+                        <a class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button">Delete</a>
+
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Silmek istediğinize emin misiniz
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a class="btn btn-outline-danger"  asp-controller="PersonalYonetimi" asp-action="Remove" asp-route-id="@item.PersonalNo"role="button">Sil</a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+</table>

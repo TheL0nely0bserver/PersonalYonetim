@@ -1,0 +1,44 @@
+@using PersonalYonetim.Data
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Ogrenci>
+
+
+<table>
+
+    <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Ad</th>
+                    <th scope="col">Soyad</th>
+                </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach(var item in Model){
+            
+            <tr>
+                    <th scope="row">@item.No</th>
+                    <td>@item.Ad</td>
+                    <td>@item.Soyad</td>
+            </tr>
+                        
+
+        }
+
+    </tbody>
+
+    
+        
+</table>
+
+
+
+
+
+
+
+
